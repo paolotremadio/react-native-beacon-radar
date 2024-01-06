@@ -33,15 +33,16 @@ DeviceEventEmitter.addListener('onBeaconsDetected', (beacons) => {
 | **startRadar (Android only)**     | This method starts scanning for all beacons in range. This is only available on Android.                                                                                                                              |
 
 
-| Event                       | Description                                                                               |
-|:----------------------------|:------------------------------------------------------------------------------------------|
-| **onBeaconsDetected**       | This event gets called when the beacon you are searching for is in range.                 |
-| **onBluetoothStateChanged** | Get the state of bluetooth on the device (Requires `bluetooth-central` mode to be set on `UIBackgroundModes` |
+| Event                       | Description                                                                                                                                                                                                                                                      |
+|:----------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **onBeaconsDetected**       | This event gets called when the beacon you are searching for is in range. Please note, this event will fire with an empty array if you have Geofencing active on your app; also note: there's no clear "exit area" event; the beacon will just drop off the list |
+| **onBluetoothStateChanged** | Get the state of bluetooth on the device (Requires `bluetooth-central` mode to be set on `UIBackgroundModes`                                                                                                                                                     |
 
 ## iOS UIBackgroundModes
 For more details about the modes, see https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothBackgroundProcessingForIOSApps/PerformingTasksWhileYourAppIsInTheBackground.html
 
 Add the following to `UIBackgroundModes`:
+- `location` REQUIRED
 - `bluetooth-central` required if you want to get the `onBluetoothStateChanged` events
 - `bluetooth-central` and `bluetooth-peripheral` required if you want to get ranging info (RSSI and distance)
 
