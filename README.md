@@ -43,8 +43,6 @@ For more details about the modes, see https://developer.apple.com/library/archiv
 
 Add the following to `UIBackgroundModes`:
 - `location` REQUIRED
-- `bluetooth-central` required if you want to get the `onBluetoothStateChanged` events
-- `bluetooth-central` and `bluetooth-peripheral` required if you want to get ranging info (RSSI and distance)
 
 
 ## Expo
