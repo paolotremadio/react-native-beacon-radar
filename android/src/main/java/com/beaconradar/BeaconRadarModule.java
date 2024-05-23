@@ -269,7 +269,7 @@ public class BeaconRadarModule extends ReactContextBaseJavaModule implements Per
   }
 
 
-
+  // See https://medium.com/@anmoldua/starting-beacons-in-android-d23c8b388d35
   public void runScan(String uuid, final Promise promise) {
     Log.d("BeaconRadarModule", "running scan");
     if (!beaconManager.isAnyConsumerBound()) {
